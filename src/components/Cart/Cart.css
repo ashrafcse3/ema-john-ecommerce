@@ -2,6 +2,8 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
+    position: sticky;
+    top: 0;
 }
 
 .cart-summary {
