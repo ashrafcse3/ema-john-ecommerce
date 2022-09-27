@@ -12,7 +12,7 @@ const Cart = ({ cart }) => {
         totalShipping = totalShipping + product.shipping;
     }
     const tax = (total * 10 / 100).toFixed(2);
-    const grandTotal = total + totalShipping + parseInt(tax);
+    const grandTotal = total + totalShipping + parseFloat(tax);
 
     return (
         <div className='cart'>
