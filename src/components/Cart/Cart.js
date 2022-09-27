@@ -4,11 +4,13 @@ import { faTrashCan, faRightLong } from '@fortawesome/free-solid-svg-icons';
 import './Cart.css';
 
 const Cart = ({ cart }) => {
-    // console.log(cart);
+    console.log(cart);
     let total = 0;
     let totalShipping = 0;
+    let quantity = 0;
     for (const product of cart) {
-        total = total + product.price;
+        quantity = quantity + product.quantity;
+        total = total + (product.price * product.quantity);
         totalShipping = totalShipping + product.shipping;
     }
     const tax = (total * 10 / 100).toFixed(2);
@@ -19,7 +21,7 @@ const Cart = ({ cart }) => {
             <h4 className='cart-summary'>Order summary</h4>
             <div className='cart-all-info'>
                 <div className='cart-info'>
-                    <p>Selected Items: {cart.length}</p>
+                    <p>Selected Items: {quantity}</p>
                     <p>Total Price: ${total}</p>
                     <p>Total Shipping Charge: ${totalShipping}</p>
                     <p>Tax: ${tax}</p>
